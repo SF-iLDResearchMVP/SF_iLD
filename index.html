@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My first HTML page" />
+    <meta name="keyword" content="HTML,  CSS, JAVASCRIPT" />
+    <meta name="author" content="Arta Farahmand" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SFiLD - Login</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+          "OrbitControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js"
+        }
+      }
+    </script>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles-responsive.css" />
+  </head>
+
+  <body>
+    <script type="tex/javascript" src="js/studentLoginData.json"></script>
+    <div class="container">
+      <div class="card">
+        <div class="logo-spacer">
+          <img
+            src="img/Athabasca_University_Logo_2017.svg"
+            alt="Athabasca University Logo"
+            class="logo-img"
+          />
+          <h2 class="text-center">Login</h2>
+        </div>
+
+        <form id="form_id" method="post" name="myform">
+          <div class="un-login">
+            <label>User Name :</label>
+            <input type="text" name="username" id="username" />
+            <label>Password :</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <input
+            type="button"
+            value="Login"
+            id="submit"
+            onclick="validate()"
+            class="cta-btn"
+          />
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts linking for ES 6 set type to module (https://codedamn.com/news/javascript/fix-require-is-not-defined)-->
+    <script type="module" src="js/index.js"></script>
+    <script type="text/javascript" src="js/dashboard.js"></script>
+    <script src="js/login.js"></script>
+
+    <!--JQuery scripts-->
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+      integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+/* 1252 Pixel width Breakpoint Styles */
+
+@media screen and (max-width: 1252px) {
+  .page-header {
+    width: 100%;
+    padding: 1em;
+  }
+
+  /* Page Elements Styles */
+  .au-logo {
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    padding: 1em;
+  }
+
+  .user-intro {
+    display: flex;
+    flex-flow: row;
+    padding: 1em;
+  }
+
+  .logo-img {
+    /*width: 40%;*/
+    height: 40%;
+  }
+
+  .text-item {
+    padding: 0.5em;
+  }
+
+  .user-img {
+    width: 12%;
+    height: 12%;
+    border: 1px solid #FFFF;
+    border-radius: 100%;
+    padding: 0.15em;
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  /* Page Elements Styles */
+
+  .display-element {
+    display:none;
+  }
+
+  .au-logo {
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    padding: 1em;
+  }
+
+  .logo-img {
+    /*width: 60%;*/
+    height: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .chart-element {
+    padding: 1em;
+  }
+
+}

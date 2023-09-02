@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My first HTML page" />
+    <meta name="keyword" content="HTML,  CSS, JAVASCRIPT" />
+    <meta name="author" content="Arta Farahmand" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SFiLD - Dashboard</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+          "OrbitControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js"
+        }
+      }
+    </script>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles-responsive.css" />
+  </head>
+
+  <body>
+    <!-- main container of the dashboard -->
+    <div class="main-container">
+      <!-- SF LAD Dashboard header -->
+      <div class="page-header">
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <div class="au-logo float-left">
+              <img
+                src="img/Athabasca_University_Logo_2017.svg"
+                alt="Athabasca University Logo"
+                class="logo-img"
+              />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-12 display-element">
+            <div class="user-intro float-right">
+              <div class="text-item">
+                <div id="user_name"></div>
+              </div>
+              <svg
+                width="2.5em"
+                height="2.5em"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-file-person-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Content -- Container -->
+      <div class="row">
+        <!-- Changed to display two graphs on large screens and above -->
+        <!-- Displays 1 graph per row for xs screens to medium screens -->
+        <div class="col-12 col-lg-6">
+          <div class="component-main">
+            <h5 class="component-header">
+              <svg
+                width="1.5em"
+                height="1.5em"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-easel3-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.5 12v1.134a1 1 0 1 1-1 0V12h-5A1.5 1.5 0 0 1 1 10.5V3h14v7.5a1.5 1.5 0 0 1-1.5 1.5h-5Zm7-10a.5.5 0 0 0 0-1H.5a.5.5 0 0 0 0 1h15Z"
+                />
+              </svg>
+              STUDENT SENTIMENT
+            </h5>
+            <div id="sentiment">
+              <div class="text-content">
+                <p class="spacer" id="student_sentiment">
+                  Overall your posts are:
+                </p>
+              </div>
+              <div class="chart-container">
+                <canvas id="sentiment-chart" class="spacer" height="166"></canvas>
+              </div>
+            </div>
+            <!--<div id="login-frequency" class="font-size"></div>-->
+            <!--<div class="text-area">
+              <p class="text-sm-green">
+                <svg width="1.25em" height="1.25em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                </svg>
+                13.5% improvement from last week
+            </p>
+            </div>-->
+          </div>
+        </div>
+
+        <!-- Changed to display two graphs on large screens and above -->
+        <!-- Displays 1 graph per row for xs screens to medium screens -->
+        <div class="col-12 col-lg-6">
+          <div class="component-main">
+            <h5 class="component-header">
+              <svg
+                width="1.5em"
+                height="1.5em"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-book-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"
+                />
+              </svg>
+              COURSE PERFORMANCE
+            </h5>
+            <div id="performance">
+              <div class="text-content">
+                <p class="spacer" id="student_category">You are a:</p>
+              </div>
+              <canvas id="performance-chart" class="spacer" height="166"></canvas>
+              <!--<div id="total-login" class="font-size"></div>
+              <div class="text-area">
+                <p class="text-sm-green">
+                  <svg width="1.25em" height="1.25em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                  </svg>
+                  13.5% improvement from last week
+              </p>
+              </div>-->
+            </div>
+          </div>
+          <!--<div id="login-frequency" class="font-size"></div>-->
+          <!--<div class="text-area">
+              <p class="text-sm-green">
+                <svg width="1.25em" height="1.25em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                </svg>
+                13.5% improvement from last week
+            </p>
+            </div>-->
+        </div>
+
+        <!--<div class="col-12 col-sm-4">
+            <div class="component-main">
+              <h5 class="component-header">
+                <svg width="0.90em" height="0.90em" viewBox="0 0 16 16" class="bi bi-calendar3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                  <path fill-rule="evenodd" d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                </svg>
+                LOGIN INTERVALS
+              </h5>
+              <div id="login-interval" class="font-size"></div>
+              <div class="text-area">
+                <p class="text-sm-green">
+                  <svg width="1.25em" height="1.25em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                  </svg>
+                  13.5% improvement from last week
+              </p>
+              </div>
+            </div>
+          </div>-->
+      </div>
+
+      <!-- Added a margin bottom of 4 to prevent the doughnut chart container from reach the bottom -->
+      <!-- of the page -->
+      <div class="row mb-4">
+        <!-- Centered this div on the page since the doughnut chart is now smaller -->
+        <div class="col col-lg-8 mx-auto text-center">
+          <div class="component-main">
+            <h5 class="component-header">
+              <svg width="1.2em" height="1.2em" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
+                <path
+                d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z" />
+              </svg>
+              TIME MANAGEMENT
+            </h5>
+            <!-- Centered this div containing the doughnut chart within its embedded container -->
+            <!-- A max-width is specified on this container -->
+            <div id="time" class="mx-auto">
+              <div class="text-content">
+                <p class="spacer" id="time-score">Overall time management score:</p>
+              </div>
+              <canvas id="time-chart" class="spacer" width="500"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- Chart.js-->
+    <!-- Use the following CDN to avoid a type error -->
+    <!-- https://stackoverflow.com/questions/74853338/migration-chart-js-with-zoom-plugin-and-moment-adapter -->
+    <!-- I moved chartjs and its adapter before our JS files so that everything will be loaded when we -->
+    <!-- want to use them in getData() -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.umd.js"></script> 
+    
+    <!-- Scripts linking for ES 6 set type to module (https://codedamn.com/news/javascript/fix-require-is-not-defined)-->
+    <script type="module" src="js/index.js"></script>
+    <script type="text/javascript" src="js/dashboard.js"></script>
+    <script src="js/login.js"></script>
+
+    <!--JQuery scripts-->
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+      integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

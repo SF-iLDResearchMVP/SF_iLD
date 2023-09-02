@@ -1,0 +1,9 @@
+ /*console.log(
+    dataPoints[3].filter((student) => student.rows.id_student === loggedInUser)
+  );*/
+  // Empty array to hold search frequency results
+  //const studentCat = [];
+  //console.log(studentCat)
+  //let category = dataPoints.map(studentCat => studentCat.cluster_assignments);
+  //const obj = JSON.parse(data)
+  //console.log(obj);
