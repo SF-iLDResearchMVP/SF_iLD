@@ -298,9 +298,9 @@ async function getData() {
   // filter lateness indicator for student000000
   performData[3].filter((performData) => {
     if (performData.student_id.includes("student000000")) {
-      latenessIndicatorAVG.push(performData.assignment_1_lateness_indicator);
-      latenessIndicatorAVG.push(performData.assignment_2_lateness_indicator);
-      latenessIndicatorAVG.push(performData.assignment_3_lateness_indicator);
+      latenessIndicatorAVG.push(performData.assignment_1_duration_to_submit_in_hours);
+      latenessIndicatorAVG.push(performData.assignment_2_duration_to_submit_in_hours);
+      latenessIndicatorAVG.push(performData.assignment_3_duration_to_submit_in_hours);
     }
   });
 
